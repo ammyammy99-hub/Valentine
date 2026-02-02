@@ -1,91 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Valentine 💖</title>
-<style>
-body {
-  background: linear-gradient(to bottom, pink, #ffb6c1);
-  text-align: center;
-  font-family: Arial;
-  overflow: hidden;
-}
+  <title>Narmada my bby</title>
 
-h1 {
-  margin-top: 100px;
-  color: red;
-}
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: pink;
+      margin-top: 100px;
+      overflow: hidden;
+    }
 
-button {
-  font-size: 22px;
-  padding: 12px 25px;
-  margin: 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
+    h1 {
+      animation: pulse 2s infinite;
+    }
 
-#yesBtn {
-  background-color: #ff4d6d;
-  color: white;
-}
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
 
-#noBtn {
-  background-color: #ccc;
-}
+    button {
+      font-size: 20px;
+      padding: 12px 25px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
 
-.heart {
-  position: fixed;
-  color: red;
-  font-size: 24px;
-  animation: float 5s linear infinite;
-}
+    #yesBtn {
+      background-color: red;
+      color: white;
+    }
 
-@keyframes float {
-  from {
-    bottom: 0;
-    opacity: 1;
-  }
-  to {
-    bottom: 100%;
-    opacity: 0;
-  }
-}
-</style>
+    #noBtn {
+      position: absolute;
+      background-color: white;
+      color: black;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>💖 Will you be my Valentine, <span id="name">My Love</span>? 💖</h1>
+  <h1>💖 Narmada my bby 💖</h1>
+  <h2>Will you be my Valentine? 💌</h2>
 
-<button id="yesBtn" onclick="yesClicked()">Yes 💘</button>
-<button id="noBtn" onclick="noClicked()">No 💔</button>
+  <button id="yesBtn" onclick="yesClicked()">Yes 😍</button>
+  <button id="noBtn">No 🙄</button>
 
-<script>
-let name = "NARMADA_mybaby"; // change this
-document.getElementById("name").innerText = name;
+  <script>
+    const noBtn = document.getElementById("noBtn");
 
-function yesClicked() {
-  document.body.innerHTML = "<h1>😍 I Love You So Much " + name + " 💖💖💖</h1><h2>You just made me the happiest person ❤️</h2>";
-}
+    noBtn.addEventListener("mouseover", function () {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
 
-function noClicked() {
-  alert("No is not allowed 😏 Try again ❤️");
-}
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
 
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}
-
-setInterval(createHeart, 500);
-</script>
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1>💖 Yayyy Narmada 💖</h1>
+        <h2>I knew you would say YES 😘</h2>
+        <h3>You are my Valentine forever ❤️</h3>
+      `;
+    }
+  </script>
 
 </body>
 </html>
